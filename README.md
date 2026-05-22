@@ -36,6 +36,8 @@ brew install lucasgelfond/zerobrew/zerobrew
 
 ## Quick start
 
+After installing zerobrew (see [Install](#install)):
+
 ```bash
 zb install jq                   # install one package
 zb install wget git             # install multiple
@@ -75,8 +77,8 @@ Our innovations focus on:
 - APFS clonefiles for zero-overhead copying
 - Source build fallback using Homebrew's Ruby DSL
 
-zerobrew is experimental. We recommend running it alongside Homebrew rather than as a replacement, and do _not_ 
-recommend purging homebrew and replacing it with zerobrew unless you are absolutely sure about the implications of 
+zerobrew is experimental. We recommend running it alongside Homebrew rather than as a replacement, and do _not_
+recommend purging Homebrew and replacing it with zerobrew unless you are absolutely sure about the implications of
 doing so. 
 
 ## Project status
