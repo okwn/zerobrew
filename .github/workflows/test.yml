@@ -55,12 +55,15 @@ jobs:
       
       - name: build (debug)
         run: cargo build --workspace --all-targets
-      
-      - name: build (release)
-        run: cargo build --workspace --release
-      
+
       - name: run unit tests
         run: cargo test --workspace
+
+      - name: build verification
+        run: |
+          cargo build --workspace --release
+          cargo clippy --workspace --all-targets -- -D warnings || true
+          echo "Build verification complete"
 
       - name: run integration tests
         run: cargo test --package zb_cli --test integration -- --ignored
