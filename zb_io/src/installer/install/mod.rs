@@ -364,6 +364,10 @@ pub fn create_installer(
 #[cfg(test)]
 mod test_support {
     pub fn create_bottle_tarball(formula_name: &str) -> Vec<u8> {
+        create_bottle_tarball_with_version(formula_name, "1.0.0")
+    }
+
+    pub fn create_bottle_tarball_with_version(formula_name: &str, version: &str) -> Vec<u8> {
         use flate2::Compression;
         use flate2::write::GzEncoder;
         use std::io::Write;
@@ -371,15 +375,16 @@ mod test_support {
 
         let mut builder = Builder::new(Vec::new());
 
+        let content = format!("#!/bin/sh\necho {} v{}", formula_name, version);
+
         let mut header = tar::Header::new_gnu();
         header
-            .set_path(format!("{}/1.0.0/bin/{}", formula_name, formula_name))
+            .set_path(format!("{}/{}/bin/{}", formula_name, version, formula_name))
             .unwrap();
-        header.set_size(20);
+        header.set_size(content.len() as u64);
         header.set_mode(0o755);
         header.set_cksum();
 
-        let content = format!("#!/bin/sh\necho {}", formula_name);
         builder.append(&header, content.as_bytes()).unwrap();
 
         let tar_data = builder.into_inner().unwrap();
