@@ -116,5 +116,4 @@ doing so.
 - **License:** Dual-licensed under [Apache 2.0](./LICENSE-APACHE.md) OR [MIT](./LICENSE-MIT.md), at your choice.
 
 ## Contributing
-
-We welcome contributions! Please feel free to submit a Pull Request or open an issue for bug reports and feature suggestions.
+PRs welcome!
