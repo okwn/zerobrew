@@ -35,6 +35,21 @@ Or via Homebrew:
 brew install lucasgelfond/zerobrew/zerobrew
 ```
 
+## Update zerobrew
+
+If you used the standalone installer, rerun it:
+
+```bash
+curl -fsSL https://zerobrew.rs/install | bash
+zb --version
+```
+
+If you installed with Homebrew:
+
+```bash
+brew update && brew upgrade zerobrew
+```
+
 ## Quick start
 
 ```bash

@@ -34,6 +34,23 @@ curl -fsSL https://zerobrew.rs/install | bash
 brew install lucasgelfond/zerobrew/zerobrew
 ```
 
+## 更新 zerobrew (Update zerobrew)
+
+如果使用独立安装脚本，重新运行：
+
+```bash
+curl -fsSL https://zerobrew.rs/install | bash
+zb --version
+```
+
+如果通过 Homebrew 安装：
+
+```bash
+brew update && brew upgrade zerobrew
+```
+
+`zb update` 只刷新软件包元数据。`zb upgrade` 升级通过 zerobrew 安装的软件包。它们都不会更新 `zb` 二进制文件本身。
+
 ## 快速开始 (Quick start)
 
 ```bash
