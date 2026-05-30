@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+Centralize a single, sandbox-tolerant rustls `ClientConfig` in `network::tls`: prefer native roots, and fall back to the bundled webpki-roots Mozilla roots when no system trust store is available ([#375](https://github.com/lucasgelfond/zerobrew/pull/375))
 
 ## [0.3.0] - 2026-05-29
 
